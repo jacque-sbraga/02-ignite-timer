@@ -61,13 +61,13 @@ export const HistoryList = styled.div`
 `
 
 const STATUS_COLORS = {
-    yellow: 'yellow-500',
-    green: 'green-500',
-    red: 'red-500'
+  yellow: 'yellow-500',
+  green: 'green-500',
+  red: 'red-500',
 } as const
 
-interface StatusProps{
-    statusColor: 'yellow' | 'red' | 'green'
+interface StatusProps {
+  statusColor: 'yellow' | 'red' | 'green'
 }
 
 export const Status = styled.span<StatusProps>`
@@ -75,11 +75,12 @@ export const Status = styled.span<StatusProps>`
   align-items: center;
   gap: 0.5rem;
 
-  &::before{
-    content: "";
+  &::before {
+    content: '';
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
-    background-color: ${props => props.theme[STATUS_COLORS[props.statusColor]]};
+    background-color: ${(props) =>
+      props.theme[STATUS_COLORS[props.statusColor]]};
   }
 `
